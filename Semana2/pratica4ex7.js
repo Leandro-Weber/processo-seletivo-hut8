@@ -14,5 +14,3 @@ for (let index = 0; index < nLinhas; index++) {
   console.log(linha);
   linha = "";
 }
-
-console.log(linha);
