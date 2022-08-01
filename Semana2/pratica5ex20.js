@@ -12,27 +12,25 @@ let dados = [
 ];
 
 function formatarCpf(cpf) {
-  let temp = "";
+  let temp = "",
+    cpfFinal;
   cpf = cpf.trim();
   if (cpf.length != 11) {
     console.log("ERRO! CPF inválido.");
     return "00000000000";
   }
-  temp += cpf[0];
-  temp += cpf[1];
-  temp += cpf[2];
-  temp += ".";
-  temp += cpf[3];
-  temp += cpf[4];
-  temp += cpf[5];
-  temp += ".";
-  temp += cpf[6];
-  temp += cpf[7];
-  temp += cpf[8];
-  temp += "-";
-  temp += cpf[9];
-  temp += cpf[10];
-  return temp;
+  temp = cpf.slice(0, 2);
+  cpfFinal += temp;
+  cpfFinal += ".";
+  temp = cpf.slice(3, 5);
+  cpfFinal += temp;
+  cpfFinal += ".";
+  temp = cpf.slice(6, 8);
+  cpfFinal += temp;
+  cpfFinal += "-";
+  temp = cpf.slice(9, 10);
+  cpfFinal += temp;
+  return cpfFinal;
 }
 
 function formatarNome(nome) {
