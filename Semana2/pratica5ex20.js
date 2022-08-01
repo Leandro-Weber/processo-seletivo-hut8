@@ -13,22 +13,22 @@ let dados = [
 
 function formatarCpf(cpf) {
   let temp = "",
-    cpfFinal;
+    cpfFinal = "";
   cpf = cpf.trim();
   if (cpf.length != 11) {
     console.log("ERRO! CPF inválido.");
     return "00000000000";
   }
-  temp = cpf.slice(0, 2);
+  temp = cpf.slice(0, 3);
   cpfFinal += temp;
   cpfFinal += ".";
-  temp = cpf.slice(3, 5);
+  temp = cpf.slice(3, 6);
   cpfFinal += temp;
   cpfFinal += ".";
-  temp = cpf.slice(6, 8);
+  temp = cpf.slice(6, 9);
   cpfFinal += temp;
   cpfFinal += "-";
-  temp = cpf.slice(9, 10);
+  temp = cpf.slice(9, 11);
   cpfFinal += temp;
   return cpfFinal;
 }
